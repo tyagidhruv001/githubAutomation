@@ -66,11 +66,12 @@ class Typewriter {
 
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  const targetElement = document.querySelector('[data-typewriter]');
+  const targetElement = document.querySelector('[data-typewriter]') || document.querySelector('.hero-tagline');
   
   if (targetElement) {
     // Read configurations from data attributes or fall back to defaults
-    const words = JSON.parse(targetElement.getAttribute('data-typewriter-words') || '[]');
+    const wordsAttr = targetElement.getAttribute('data-typewriter-words');
+    const words = wordsAttr ? JSON.parse(wordsAttr) : ["Frontend Developer", "UI/UX Designer", "Creative Thinker"];
     const wait = parseInt(targetElement.getAttribute('data-typewriter-wait') || '2000', 10);
     const typeSpeed = parseInt(targetElement.getAttribute('data-typewriter-speed') || '100', 10);
     
