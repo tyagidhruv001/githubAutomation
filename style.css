@@ -212,6 +212,7 @@ html, body {
   justify-content: center;
   align-items: center;
   position: relative;
+  z-index: 1;
 }
 
 .visual-blob {
@@ -219,10 +220,11 @@ html, body {
   height: clamp(280px, 30vw, 400px);
   background: var(--gradient-primary);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  filter: blur(10px);
+  filter: blur(1px);
   animation: blob-morph 8s ease-in-out infinite alternate;
-  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 50px rgba(129, 140, 248, 0.3);
   position: relative;
+  z-index: 1;
 }
 
 .visual-blob::after {
@@ -232,7 +234,7 @@ html, body {
   background: var(--bg-primary);
   border-radius: inherit;
   opacity: 0.95;
-  z-index: -1;
+  z-index: 2;
 }
 
 /* Blob Animation */
